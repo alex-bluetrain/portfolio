@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import MilestoneCard from './MilestoneCard.astro';
+
+interface Props {
+	milestones: CollectionEntry<'milestones'>[];
+}
+
+const { milestones } = Astro.props;
+
+const sorted = [...milestones].sort((a, b) => {
+	const diff = a.data.date.getTime() - b.data.date.getTime();
+	return diff !== 0 ? diff : a.data.order - b.data.order;
+});
+---
+
+<div class="timeline">
+	{sorted.map((milestone) => <MilestoneCard milestone={milestone} />)}
+</div>
+
+<style>
+	.timeline {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 24px;
+	}
+</style>

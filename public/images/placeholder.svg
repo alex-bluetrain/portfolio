@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+	<rect width="800" height="500" fill="#1b1b20"/>
+	<rect x="1" y="1" width="798" height="498" fill="none" stroke="#3a3a42" stroke-width="2" stroke-dasharray="10 8"/>
+	<g fill="#5c5c66">
+		<path d="M400 190 l-40 46 h24 v70 h32 v-70 h24 z" opacity="0"/>
+		<circle cx="400" cy="220" r="46" fill="none" stroke="#5c5c66" stroke-width="6"/>
+		<circle cx="400" cy="220" r="16" fill="#5c5c66"/>
+		<path d="M330 190 h-20 a10 10 0 0 0 -10 10 v40 a10 10 0 0 0 10 10 h20" fill="none" stroke="#5c5c66" stroke-width="6"/>
+		<path d="M470 190 h20 a10 10 0 0 1 10 10 v40 a10 10 0 0 1 -10 10 h-20" fill="none" stroke="#5c5c66" stroke-width="6"/>
+	</g>
+	<text x="400" y="320" font-family="system-ui, sans-serif" font-size="22" fill="#7a7a84" text-anchor="middle">FOTO PENDIENTE</text>
+	<text x="400" y="350" font-family="system-ui, sans-serif" font-size="14" fill="#5c5c66" text-anchor="middle">Reemplazar en src/content/milestones</text>
+</svg>

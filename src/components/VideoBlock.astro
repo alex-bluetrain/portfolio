@@ -1,0 +1,45 @@
+---
+interface VideoItem {
+	src?: string;
+	title: string;
+	caption?: string;
+}
+
+interface Props {
+	videos: VideoItem[];
+}
+
+const { videos } = Astro.props;
+---
+
+{videos.length > 0 && (
+	<div class="videos">
+		{videos.map((video) => (
+			<div class="placeholder-video">
+				{video.src ? (
+					// TODO: si src es un link de YouTube/Vimeo, reemplazar por <iframe>; si es un
+					// archivo local (ej: /videos/clip.mp4), reemplazar por <video controls src={video.src} />
+					<video controls src={video.src}></video>
+				) : (
+					<>
+						<div class="placeholder-video__play">▶</div>
+						<p class="placeholder-video__caption">{video.title}{video.caption ? ` — ${video.caption}` : ''}</p>
+					</>
+				)}
+			</div>
+		))}
+	</div>
+)}
+
+<style>
+	.videos {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 16px;
+	}
+
+	video {
+		width: 100%;
+		height: 100%;
+	}
+</style>

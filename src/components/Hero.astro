@@ -1,0 +1,61 @@
+---
+---
+
+<section class="hero">
+	<div class="container hero__inner">
+		<p class="hero__eyebrow">Proyecto personal · en construcción desde <!-- TODO: año de inicio -->2021</p>
+		<h1 class="hero__title">
+			<!-- TODO: título/nombre propio del simulador -->
+			Construyendo mi simulador de carreras, pieza por pieza
+		</h1>
+		<p class="hero__subtitle">
+			<!-- TODO: 2-3 líneas contando la motivación del proyecto: por qué lo empezaste,
+			qué buscabas simular, con qué arrancaste (volante genérico, silla de living, etc.)
+			y a dónde llegó hoy. -->
+			Este es el registro de cómo un simulador armado con lo que tenía a mano se fue
+			transformando en un cockpit completo: cada pieza de hardware, cada firmware y cada
+			versión de software que fui construyendo con mis manos.
+		</p>
+		<div class="hero__actions">
+			<a class="button" href="#timeline">Ver la evolución</a>
+			<a class="button button--ghost" href="#contacto">Contacto</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		padding: 96px 0 64px;
+		border-bottom: 1px solid var(--border);
+		background:
+			radial-gradient(circle at 20% -10%, rgba(225, 6, 0, 0.12), transparent 60%),
+			var(--bg);
+	}
+
+	.hero__eyebrow {
+		color: var(--accent);
+		font-size: 0.85rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		margin-bottom: 16px;
+	}
+
+	.hero__title {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		max-width: 760px;
+		letter-spacing: -0.02em;
+	}
+
+	.hero__subtitle {
+		max-width: 620px;
+		font-size: 1.05rem;
+		margin-bottom: 32px;
+	}
+
+	.hero__actions {
+		display: flex;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+</style>

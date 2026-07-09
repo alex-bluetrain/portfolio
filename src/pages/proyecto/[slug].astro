@@ -1,0 +1,157 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Gallery from '../../components/Gallery.astro';
+import VideoBlock from '../../components/VideoBlock.astro';
+import SpecsTable from '../../components/SpecsTable.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+	const milestones = await getCollection('milestones');
+	return milestones.map((milestone) => ({
+		params: { slug: milestone.id },
+		props: { milestone },
+	}));
+}
+
+const { milestone } = Astro.props;
+const { title, date, category, status, cover, images, videos, specs, tags } = milestone.data;
+const { Content } = await render(milestone);
+
+const categoryLabel: Record<string, string> = {
+	hardware: 'Hardware',
+	electronica: 'Electrónica',
+	firmware: 'Firmware',
+	software: 'Software',
+};
+
+const statusLabel: Record<string, string> = {
+	completado: 'Completado',
+	'en-progreso': 'En progreso',
+	iterando: 'Iterando',
+};
+
+const formattedDate = date.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' });
+---
+
+<Layout title={`${title} — Sim Racing Rig`}>
+	<Header />
+
+	<article class="section container detail">
+		<a class="back-link" href="/#timeline">&larr; Volver a la evolución</a>
+
+		<div class="detail__meta">
+			<span class={`badge badge--${category}`}>{categoryLabel[category]}</span>
+			<span class="status">{formattedDate}</span>
+			<span class="status">{statusLabel[status]}</span>
+		</div>
+
+		<h1 class="detail__title">{title}</h1>
+
+		{tags.length > 0 && (
+			<div class="detail__tags">
+				{tags.map((tag) => <span class="tag">{tag}</span>)}
+			</div>
+		)}
+
+		<div class="detail__cover">
+			<img src={cover} alt={title} />
+		</div>
+
+		<div class="detail__content">
+			<Content />
+		</div>
+
+		{specs.length > 0 && (
+			<div class="detail__block">
+				<h2>Ficha técnica</h2>
+				<SpecsTable specs={specs} />
+			</div>
+		)}
+
+		{images.length > 0 && (
+			<div class="detail__block">
+				<h2>Fotos</h2>
+				<Gallery images={images} />
+			</div>
+		)}
+
+		{videos.length > 0 && (
+			<div class="detail__block">
+				<h2>Videos</h2>
+				<VideoBlock videos={videos} />
+			</div>
+		)}
+	</article>
+
+	<Footer />
+</Layout>
+
+<style>
+	.detail {
+		max-width: 820px;
+	}
+
+	.back-link {
+		display: inline-block;
+		text-decoration: none;
+		color: var(--text-muted);
+		margin-bottom: 24px;
+		font-size: 0.9rem;
+	}
+
+	.back-link:hover {
+		color: var(--text);
+	}
+
+	.detail__meta {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 12px;
+	}
+
+	.detail__title {
+		font-size: clamp(1.8rem, 4vw, 2.6rem);
+		margin-bottom: 12px;
+	}
+
+	.detail__tags {
+		display: flex;
+		gap: 8px;
+		margin-bottom: 24px;
+	}
+
+	.tag {
+		font-size: 0.75rem;
+		color: var(--text-muted);
+		background: rgba(255, 255, 255, 0.05);
+		padding: 3px 10px;
+		border-radius: 999px;
+	}
+
+	.detail__cover {
+		border-radius: var(--radius);
+		overflow: hidden;
+		border: 1px solid var(--border);
+		margin-bottom: 32px;
+	}
+
+	.detail__content {
+		margin-bottom: 40px;
+	}
+
+	.detail__content :global(p) {
+		font-size: 1.02rem;
+	}
+
+	.detail__block {
+		margin-bottom: 40px;
+	}
+
+	.detail__block h2 {
+		font-size: 1.3rem;
+		margin-bottom: 16px;
+	}
+</style>

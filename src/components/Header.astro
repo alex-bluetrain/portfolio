@@ -1,0 +1,70 @@
+---
+---
+
+<header class="header">
+	<div class="container header__inner">
+		<a href="/" class="header__brand">
+			<!-- TODO: reemplazar por logo/nombre del rig o del proyecto -->
+			Sim Racing Rig<span>.</span>
+		</a>
+		<nav class="header__nav">
+			<a href="#timeline">Evolución</a>
+			<a href="#hardware">Hardware</a>
+			<a href="#software">Software</a>
+			<a href="#contacto">Contacto</a>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.header {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background: rgba(13, 13, 15, 0.85);
+		backdrop-filter: blur(10px);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.header__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 64px;
+	}
+
+	.header__brand {
+		font-weight: 700;
+		text-decoration: none;
+		letter-spacing: -0.02em;
+	}
+
+	.header__brand span {
+		color: var(--accent);
+	}
+
+	.header__nav {
+		display: flex;
+		gap: 24px;
+	}
+
+	.header__nav a {
+		text-decoration: none;
+		color: var(--text-muted);
+		font-size: 0.9rem;
+		transition: color 0.15s ease;
+	}
+
+	.header__nav a:hover {
+		color: var(--text);
+	}
+
+	@media (max-width: 640px) {
+		.header__nav {
+			gap: 14px;
+		}
+		.header__nav a {
+			font-size: 0.8rem;
+		}
+	}
+</style>
