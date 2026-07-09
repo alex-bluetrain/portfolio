@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { withBase } from '../lib/paths';
 
 interface Props {
 	milestone: CollectionEntry<'milestones'>;
@@ -24,9 +25,9 @@ const statusLabel: Record<string, string> = {
 const formattedDate = date.toLocaleDateString('es-AR', { month: 'short', year: 'numeric' });
 ---
 
-<a class="card milestone-card" href={`/proyecto/${milestone.id}`}>
+<a class="card milestone-card" href={withBase(`proyecto/${milestone.id}`)}>
 	<div class="milestone-card__cover">
-		<img src={cover} alt={title} loading="lazy" />
+		<img src={withBase(cover)} alt={title} loading="lazy" />
 	</div>
 	<div class="milestone-card__body">
 		<div class="milestone-card__meta">

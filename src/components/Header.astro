@@ -1,17 +1,18 @@
 ---
+import { withBase } from '../lib/paths';
 ---
 
 <header class="header">
 	<div class="container header__inner">
-		<a href="/" class="header__brand">
+		<a href={withBase('')} class="header__brand">
 			<!-- TODO: reemplazar por logo/nombre del rig o del proyecto -->
 			Sim Racing Rig<span>.</span>
 		</a>
 		<nav class="header__nav">
-			<a href="#timeline">Evolución</a>
-			<a href="#hardware">Hardware</a>
-			<a href="#software">Software</a>
-			<a href="#contacto">Contacto</a>
+			<a href={withBase('#timeline')}>Evolución</a>
+			<a href={withBase('#hardware')}>Hardware</a>
+			<a href={withBase('#software')}>Software</a>
+			<a href={withBase('#contacto')}>Contacto</a>
 		</nav>
 	</div>
 </header>

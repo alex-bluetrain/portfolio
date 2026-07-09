@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/paths';
+
 interface ImageItem {
 	src: string;
 	alt: string;
@@ -16,7 +18,7 @@ const { images } = Astro.props;
 	<div class="gallery">
 		{images.map((image) => (
 			<figure class="gallery__item">
-				<img src={image.src} alt={image.alt} loading="lazy" />
+				<img src={withBase(image.src)} alt={image.alt} loading="lazy" />
 				{image.caption && <figcaption>{image.caption}</figcaption>}
 			</figure>
 		))}

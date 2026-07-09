@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/paths';
+
 interface VideoItem {
 	src?: string;
 	title: string;
@@ -19,7 +21,7 @@ const { videos } = Astro.props;
 				{video.src ? (
 					// TODO: si src es un link de YouTube/Vimeo, reemplazar por <iframe>; si es un
 					// archivo local (ej: /videos/clip.mp4), reemplazar por <video controls src={video.src} />
-					<video controls src={video.src}></video>
+					<video controls src={video.src.startsWith('/') ? withBase(video.src) : video.src}></video>
 				) : (
 					<>
 						<div class="placeholder-video__play">▶</div>
