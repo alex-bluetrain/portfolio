@@ -5,11 +5,10 @@ const milestones = defineCollection({
 	loader: glob({ pattern: '**/*.md', base: './src/content/milestones' }),
 	schema: z.object({
 		title: z.string(),
-		// Fecha aproximada del hito (podés ajustarla a medida que confirmes fechas reales)
+		// Approximate milestone date (adjust it as you confirm real dates)
 		date: z.coerce.date(),
-		category: z.enum(['hardware', 'electronica', 'firmware', 'software']),
-		status: z.enum(['completado', 'en-progreso', 'iterando']).default('completado'),
-		// Resumen corto para la tarjeta del timeline
+		status: z.enum(['completed', 'in-progress', 'iterating']).default('completed'),
+		// Short summary for the timeline card
 		summary: z.string(),
 		cover: z.string().default('/images/placeholder.svg'),
 		images: z
@@ -24,7 +23,7 @@ const milestones = defineCollection({
 		videos: z
 			.array(
 				z.object({
-					// Dejá src vacío hasta subir el video (ej: a /videos/ o YouTube embed URL)
+					// Leave src empty until you upload the video (e.g. to /videos/ or a YouTube embed URL)
 					src: z.string().optional(),
 					title: z.string(),
 					caption: z.string().optional(),
@@ -40,7 +39,7 @@ const milestones = defineCollection({
 			)
 			.default([]),
 		tags: z.array(z.string()).default([]),
-		// Orden manual dentro del timeline cuando dos hitos comparten fecha aproximada
+		// Manual order within the timeline when two milestones share an approximate date
 		order: z.number().default(0),
 	}),
 });

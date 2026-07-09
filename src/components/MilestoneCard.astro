@@ -7,31 +7,23 @@ interface Props {
 }
 
 const { milestone } = Astro.props;
-const { title, date, category, status, summary, cover, tags } = milestone.data;
-
-const categoryLabel: Record<string, string> = {
-	hardware: 'Hardware',
-	electronica: 'Electrónica',
-	firmware: 'Firmware',
-	software: 'Software',
-};
+const { title, date, status, summary, cover, tags } = milestone.data;
 
 const statusLabel: Record<string, string> = {
-	completado: 'Completado',
-	'en-progreso': 'En progreso',
-	iterando: 'Iterando',
+	completed: 'Completed',
+	'in-progress': 'In progress',
+	iterating: 'Iterating',
 };
 
-const formattedDate = date.toLocaleDateString('es-AR', { month: 'short', year: 'numeric' });
+const formattedDate = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 ---
 
-<a class="card milestone-card" href={withBase(`proyecto/${milestone.id}`)}>
+<a class="card milestone-card" href={withBase(`project/${milestone.id}`)}>
 	<div class="milestone-card__cover">
 		<img src={withBase(cover)} alt={title} loading="lazy" />
 	</div>
 	<div class="milestone-card__body">
 		<div class="milestone-card__meta">
-			<span class={`badge badge--${category}`}>{categoryLabel[category]}</span>
 			<span class="status">{formattedDate}</span>
 		</div>
 		<h3 class="milestone-card__title">{title}</h3>

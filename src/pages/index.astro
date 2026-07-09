@@ -7,8 +7,6 @@ import Timeline from '../components/Timeline.astro';
 import Footer from '../components/Footer.astro';
 
 const milestones = await getCollection('milestones');
-const hardware = milestones.filter((m) => m.data.category === 'hardware' || m.data.category === 'electronica');
-const software = milestones.filter((m) => m.data.category === 'software' || m.data.category === 'firmware');
 ---
 
 <Layout>
@@ -16,33 +14,13 @@ const software = milestones.filter((m) => m.data.category === 'software' || m.da
 	<Hero />
 
 	<section class="section container" id="timeline">
-		<h2 class="section-title">Línea de tiempo del proyecto</h2>
+		<h2 class="section-title">Sim Racing</h2>
 		<p class="section-subtitle">
-			<!-- TODO: breve intro a la sección -->
-			Todos los hitos, en orden cronológico: desde las primeras piezas caseras hasta las
-			últimas iteraciones de hardware, firmware y software.
+			<!-- TODO: short intro for this section -->
+			Every milestone, in chronological order: from the first DIY parts to the latest
+			hardware, firmware, and software iterations.
 		</p>
 		<Timeline milestones={milestones} />
-	</section>
-
-	<section class="section container" id="hardware">
-		<h2 class="section-title">Hardware casero</h2>
-		<p class="section-subtitle">
-			<!-- TODO: intro de la sección de hardware -->
-			Shifter secuencial, cockpit, soporte de monitores, pedalera, bass shaker e indicador de
-			RPM: todo diseñado y fabricado a mano.
-		</p>
-		<Timeline milestones={hardware} />
-	</section>
-
-	<section class="section container" id="software">
-		<h2 class="section-title">Firmware &amp; software propio</h2>
-		<p class="section-subtitle">
-			<!-- TODO: intro de la sección de software -->
-			El firmware que corre en cada periférico y las herramientas de software que escribí
-			para calibrar y ajustar el rig.
-		</p>
-		<Timeline milestones={software} />
 	</section>
 
 	<Footer />

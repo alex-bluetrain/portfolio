@@ -8,7 +8,7 @@
 	--accent: #e10600;
 	--accent-2: #ff9f1c;
 	--cat-hardware: #e10600;
-	--cat-electronica: #ff9f1c;
+	--cat-electronics: #ff9f1c;
 	--cat-firmware: #00b4d8;
 	--cat-software: #8338ec;
 	--radius: 14px;
@@ -106,8 +106,8 @@ img {
 .badge--hardware {
 	color: var(--cat-hardware);
 }
-.badge--electronica {
-	color: var(--cat-electronica);
+.badge--electronics {
+	color: var(--cat-electronics);
 }
 .badge--firmware {
 	color: var(--cat-firmware);

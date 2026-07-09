@@ -8,6 +8,6 @@
 		<path d="M330 190 h-20 a10 10 0 0 0 -10 10 v40 a10 10 0 0 0 10 10 h20" fill="none" stroke="#5c5c66" stroke-width="6"/>
 		<path d="M470 190 h20 a10 10 0 0 1 10 10 v40 a10 10 0 0 1 -10 10 h-20" fill="none" stroke="#5c5c66" stroke-width="6"/>
 	</g>
-	<text x="400" y="320" font-family="system-ui, sans-serif" font-size="22" fill="#7a7a84" text-anchor="middle">FOTO PENDIENTE</text>
-	<text x="400" y="350" font-family="system-ui, sans-serif" font-size="14" fill="#5c5c66" text-anchor="middle">Reemplazar en src/content/milestones</text>
+	<text x="400" y="320" font-family="system-ui, sans-serif" font-size="22" fill="#7a7a84" text-anchor="middle">PHOTO PENDING</text>
+	<text x="400" y="350" font-family="system-ui, sans-serif" font-size="14" fill="#5c5c66" text-anchor="middle">Replace in src/content/milestones</text>
 </svg>

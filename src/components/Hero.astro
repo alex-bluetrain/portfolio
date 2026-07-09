@@ -3,22 +3,22 @@
 
 <section class="hero">
 	<div class="container hero__inner">
-		<p class="hero__eyebrow">Proyecto personal · en construcción desde <!-- TODO: año de inicio -->2021</p>
+		<p class="hero__eyebrow">Personal project · building since <!-- TODO: start year -->2021</p>
 		<h1 class="hero__title">
-			<!-- TODO: título/nombre propio del simulador -->
-			Construyendo mi simulador de carreras, pieza por pieza
+			<!-- TODO: your simulator's actual name/title -->
+			Building my racing simulator, piece by piece
 		</h1>
 		<p class="hero__subtitle">
-			<!-- TODO: 2-3 líneas contando la motivación del proyecto: por qué lo empezaste,
-			qué buscabas simular, con qué arrancaste (volante genérico, silla de living, etc.)
-			y a dónde llegó hoy. -->
-			Este es el registro de cómo un simulador armado con lo que tenía a mano se fue
-			transformando en un cockpit completo: cada pieza de hardware, cada firmware y cada
-			versión de software que fui construyendo con mis manos.
+			<!-- TODO: 2-3 lines on the project's motivation: why you started it, what you
+			wanted to simulate, what you started with (generic wheel, a living-room chair,
+			etc.), and where it stands today. -->
+			This is the record of how a simulator built with whatever I had on hand turned
+			into a full cockpit: every piece of hardware, every firmware, and every version
+			of software I built with my own two hands.
 		</p>
 		<div class="hero__actions">
-			<a class="button" href="#timeline">Ver la evolución</a>
-			<a class="button button--ghost" href="#contacto">Contacto</a>
+			<a class="button" href="#timeline">See the evolution</a>
+			<a class="button button--ghost" href="#contacto">Contact</a>
 		</div>
 	</div>
 </section>
@@ -29,7 +29,8 @@
 		border-bottom: 1px solid var(--border);
 		background:
 			radial-gradient(circle at 20% -10%, rgba(225, 6, 0, 0.12), transparent 60%),
-			var(--bg);
+			linear-gradient(180deg, rgba(10, 10, 10, 0.82), rgba(10, 10, 10, 0.92)),
+			url('/images/simracing-rig.jpg') center 30% / cover no-repeat;
 	}
 
 	.hero__eyebrow {
@@ -42,12 +43,14 @@
 	}
 
 	.hero__title {
+		color: #fff;
 		font-size: clamp(2rem, 5vw, 3.2rem);
 		max-width: 760px;
 		letter-spacing: -0.02em;
 	}
 
 	.hero__subtitle {
+		color: rgba(255, 255, 255, 0.85);
 		max-width: 620px;
 		font-size: 1.05rem;
 		margin-bottom: 32px;

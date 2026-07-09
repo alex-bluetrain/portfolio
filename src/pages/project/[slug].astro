@@ -17,33 +17,25 @@ export async function getStaticPaths() {
 }
 
 const { milestone } = Astro.props;
-const { title, date, category, status, cover, images, videos, specs, tags } = milestone.data;
+const { title, date, status, cover, images, videos, specs, tags } = milestone.data;
 const { Content } = await render(milestone);
 
-const categoryLabel: Record<string, string> = {
-	hardware: 'Hardware',
-	electronica: 'Electrónica',
-	firmware: 'Firmware',
-	software: 'Software',
-};
-
 const statusLabel: Record<string, string> = {
-	completado: 'Completado',
-	'en-progreso': 'En progreso',
-	iterando: 'Iterando',
+	completed: 'Completed',
+	'in-progress': 'In progress',
+	iterating: 'Iterating',
 };
 
-const formattedDate = date.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' });
+const formattedDate = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 ---
 
-<Layout title={`${title} — Sim Racing Rig`}>
+<Layout title={`${title} — Portfolio`}>
 	<Header />
 
 	<article class="section container detail">
-		<a class="back-link" href={withBase('#timeline')}>&larr; Volver a la evolución</a>
+		<a class="back-link" href={withBase('#timeline')}>&larr; Back to the timeline</a>
 
 		<div class="detail__meta">
-			<span class={`badge badge--${category}`}>{categoryLabel[category]}</span>
 			<span class="status">{formattedDate}</span>
 			<span class="status">{statusLabel[status]}</span>
 		</div>
@@ -66,14 +58,14 @@ const formattedDate = date.toLocaleDateString('es-AR', { month: 'long', year: 'n
 
 		{specs.length > 0 && (
 			<div class="detail__block">
-				<h2>Ficha técnica</h2>
+				<h2>Specs</h2>
 				<SpecsTable specs={specs} />
 			</div>
 		)}
 
 		{images.length > 0 && (
 			<div class="detail__block">
-				<h2>Fotos</h2>
+				<h2>Photos</h2>
 				<Gallery images={images} />
 			</div>
 		)}

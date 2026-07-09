@@ -19,8 +19,8 @@ const { videos } = Astro.props;
 		{videos.map((video) => (
 			<div class="placeholder-video">
 				{video.src ? (
-					// TODO: si src es un link de YouTube/Vimeo, reemplazar por <iframe>; si es un
-					// archivo local (ej: /videos/clip.mp4), reemplazar por <video controls src={video.src} />
+					// TODO: if src is a YouTube/Vimeo link, replace with an <iframe>; if it's a
+					// local file (e.g. /videos/clip.mp4), keep <video controls src={video.src} />
 					<video controls src={video.src.startsWith('/') ? withBase(video.src) : video.src}></video>
 				) : (
 					<>
