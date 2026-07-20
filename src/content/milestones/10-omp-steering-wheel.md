@@ -12,7 +12,11 @@ images:
   - src: /images/placeholder.svg
     alt: "Photo pending: wheel adapter detail"
     caption: "Adapter and quick-release detail"
-videos: []
+videos:
+  - src: https://youtu.be/-ZsLEgNVeXw
+    title: "OMP steering wheel in action"
+  - src: https://youtu.be/E_dwNOK_TRw
+    title: "OMP wheel detail"
 specs:
   - label: "Wheel"
     value: "OMP (PENDING model)"

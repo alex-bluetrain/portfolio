@@ -12,7 +12,9 @@ images:
   - src: /images/placeholder.svg
     alt: "Photo pending: elastomer installed in the brake pedal"
     caption: "Elastomer installed in the brake pedal mechanism"
-videos: []
+videos:
+  - src: https://youtu.be/4Hketpevl5M
+    title: "Braking elastomers demonstration"
 specs:
   - label: "Elastomer set"
     value: "PENDING (hardness range)"

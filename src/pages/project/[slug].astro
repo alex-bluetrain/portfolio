@@ -44,6 +44,12 @@ const formattedDate = date.toLocaleDateString('en-US', { month: 'long', year: 'n
 
 		<h1 class="detail__title">{title}</h1>
 
+		{videos.length > 0 && (
+			<div class="detail__block detail__block--videos">
+				<VideoBlock videos={videos} />
+			</div>
+		)}
+
 		<div class="detail__cover">
 			<img src={withBase(cover)} alt={title} />
 		</div>
@@ -63,13 +69,6 @@ const formattedDate = date.toLocaleDateString('en-US', { month: 'long', year: 'n
 			<div class="detail__block">
 				<h2>Photos</h2>
 				<Gallery images={images} />
-			</div>
-		)}
-
-		{videos.length > 0 && (
-			<div class="detail__block">
-				<h2>Videos</h2>
-				<VideoBlock videos={videos} />
 			</div>
 		)}
 	</article>
@@ -153,5 +152,11 @@ const formattedDate = date.toLocaleDateString('en-US', { month: 'long', year: 'n
 		margin-bottom: 24px;
 		color: #fff;
 		letter-spacing: -0.01em;
+	}
+
+	.detail__block--videos {
+		margin-bottom: 56px;
+		padding-top: 0;
+		border-top: none;
 	}
 </style>

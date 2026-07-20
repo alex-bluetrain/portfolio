@@ -9,10 +9,23 @@ images:
   - src: /images/me-on-triple-screens.jpg
     alt: "Triple screen stand, front view"
     caption: "Front view of the finished stand"
-  - src: /images/placeholder.svg
-    alt: "Photo pending: mounting detail"
-    caption: "Mounting and angle-adjustment detail"
-videos: []
+  - src: /images/triple-screen-setup.jpg
+    alt: "Triple screen setup with pedals"
+    caption: "Complete triple screen setup with pedal box"
+  - src: /images/triple-screen-06.jpg
+    alt: "Triple screen in action 1"
+    caption: "Triple screen setup with driver"
+  - src: /images/triple-screen-07.jpg
+    alt: "Triple screen in action 2"
+    caption: "Triple screen panoramic view"
+  - src: /images/triple-screen-08.jpg
+    alt: "Triple screen in action 3"
+    caption: "Triple screen cockpit view from driver's perspective"
+videos:
+  - src: https://youtu.be/25QNes8U1u4
+    title: "Triple screen setup showcase"
+  - src: https://youtu.be/7DG89DomciY
+    title: "Triple screen detail"
 specs:
   - label: "Materials"
     value: "PENDING (e.g. structural tubing, MDF, hardware)"

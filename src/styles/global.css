@@ -67,11 +67,12 @@ img {
 .container {
 	max-width: var(--max-width);
 	margin: 0 auto;
-	padding: 0 24px;
+	padding: 0 clamp(40px, 5vw, 60px);
 }
 
 .section {
-	padding: 72px 0;
+	padding-top: 72px;
+	padding-bottom: 72px;
 }
 
 .section-title {
@@ -197,6 +198,7 @@ img {
 
 @media (max-width: 640px) {
 	.section {
-		padding: 48px 0;
+		padding-top: 48px;
+		padding-bottom: 48px;
 	}
 }

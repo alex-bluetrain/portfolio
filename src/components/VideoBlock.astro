@@ -69,6 +69,19 @@ function getYouTubeEmbedUrl(src: string): string | null {
 		gap: 16px;
 	}
 
+	.videos:has(> :only-child) {
+		grid-template-columns: 1fr;
+	}
+
+	.placeholder-video {
+		position: relative;
+		aspect-ratio: 16 / 9;
+	}
+
+	.videos:has(> :only-child) .placeholder-video {
+		min-height: 500px;
+	}
+
 	video,
 	iframe {
 		width: 100%;

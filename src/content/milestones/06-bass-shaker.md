@@ -9,12 +9,18 @@ images:
   - src: /images/bass-shaker-01.jpg
     alt: "Bass shaker mounted on the seat structure"
     caption: "Transducer mounted on the seat structure"
-  - src: /images/placeholder.svg
-    alt: "Photo pending: amplifier used"
-    caption: "Audio amplifier dedicated to the bass shaker"
+  - src: /images/bass-shaker-seat.jpg
+    alt: "Sparco seat with bass shaker transducer mounted"
+    caption: "Sparco racing seat with bass shaker installed underneath"
+  - src: /images/bass-shaker-transducer.jpg
+    alt: "Close-up of the tactile transducer"
+    caption: "Tactile transducer detail and mounting mechanism"
 videos:
-  - title: "Video pending: haptic feedback demonstration"
+  - src: https://youtu.be/Dk-MLClh6DE
+    title: "Bass shaker haptic feedback demo"
     caption: "Feeling the engine and track vibrations in the seat"
+  - src: https://youtu.be/oLIG2e66V8A
+    title: "Bass shaker installation detail"
 specs:
   - label: "Transducer"
     value: "PENDING (e.g. Buttkicker-style/generic tactile transducer)"

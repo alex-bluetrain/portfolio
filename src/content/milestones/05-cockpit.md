@@ -9,12 +9,18 @@ images:
   - src: /images/cockpit-01.jpg
     alt: "Full cockpit assembled"
     caption: "Full cockpit, overview shot"
-  - src: /images/placeholder.svg
-    alt: "Photo pending: seat detail"
-    caption: "Seat and mounting detail"
-  - src: /images/placeholder.svg
-    alt: "Photo pending: pedal adjustment rails"
-    caption: "Rails for adjusting pedal distance"
+  - src: /images/cockpit-02.jpg
+    alt: "Cockpit front view"
+    caption: "Cockpit front view with all peripherals"
+  - src: /images/cockpit-03.jpg
+    alt: "Cockpit detail view"
+    caption: "Cockpit detail and mounting"
+  - src: /images/cockpit-04.jpg
+    alt: "Cockpit interior detail"
+    caption: "Interior layout and cable routing"
+  - src: /images/cockpit-05.jpg
+    alt: "Cockpit assembled view"
+    caption: "Completed cockpit assembly"
 videos:
   - title: "Video pending: walkthrough of the finished cockpit"
     caption: "Walkaround showing all the integrated parts"

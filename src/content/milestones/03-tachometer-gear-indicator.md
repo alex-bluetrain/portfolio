@@ -13,8 +13,9 @@ images:
     alt: "Photo pending: gear indicator mounted in the cockpit"
     caption: "Indicator's location in the cockpit"
 videos:
-  - title: "Video pending: tachometer and gear indicator reacting to in-game telemetry"
-    caption: "LED sequence climbing through the revs up to the cutoff zone, gear number updating"
+  - src: https://youtu.be/AYl0Dx2568s
+    title: "Tachometer and gear indicator demo"
+    caption: "LED sequence reacting to RPM and gear indicator updating in real time"
 specs:
   - label: "Data source"
     value: "PENDING (e.g. the game's UDP telemetry)"
