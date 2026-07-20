@@ -17,13 +17,20 @@ export async function getStaticPaths() {
 }
 
 const { milestone } = Astro.props;
-const { title, date, status, cover, images, videos, specs, tags } = milestone.data;
+const { title, date, category, status, cover, images, videos, specs, tags } = milestone.data;
 const { Content } = await render(milestone);
 
 const statusLabel: Record<string, string> = {
 	completed: 'Completed',
 	'in-progress': 'In progress',
 	iterating: 'Iterating',
+};
+
+const categoryLabel: Record<string, string> = {
+	hardware: 'Hardware',
+	electronics: 'Electronics',
+	firmware: 'Firmware',
+	software: 'Software',
 };
 
 const formattedDate = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
@@ -36,6 +43,7 @@ const formattedDate = date.toLocaleDateString('en-US', { month: 'long', year: 'n
 		<a class="back-link" href={withBase('#timeline')}>&larr; Back to the timeline</a>
 
 		<div class="detail__meta">
+			<span class={`badge badge--${category}`}>{categoryLabel[category]}</span>
 			<span class="status">{formattedDate}</span>
 			<span class="status">{statusLabel[status]}</span>
 		</div>

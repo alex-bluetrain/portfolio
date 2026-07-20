@@ -7,6 +7,7 @@ const milestones = defineCollection({
 		title: z.string(),
 		// Approximate milestone date (adjust it as you confirm real dates)
 		date: z.coerce.date(),
+		category: z.enum(['hardware', 'electronics', 'firmware', 'software']),
 		status: z.enum(['completed', 'in-progress', 'iterating']).default('completed'),
 		// Short summary for the timeline card
 		summary: z.string(),

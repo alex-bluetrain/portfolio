@@ -33,9 +33,11 @@ import { withBase } from '../lib/paths';
 	}
 
 	.header__brand {
+		font-family: var(--font-display);
 		font-weight: 700;
+		font-size: 1.1rem;
 		text-decoration: none;
-		letter-spacing: -0.02em;
+		letter-spacing: -0.01em;
 	}
 
 	.header__brand span {
@@ -50,7 +52,10 @@ import { withBase } from '../lib/paths';
 	.header__nav a {
 		text-decoration: none;
 		color: var(--text-muted);
-		font-size: 0.9rem;
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 		transition: color 0.15s ease;
 	}
 

@@ -7,12 +7,19 @@ interface Props {
 }
 
 const { milestone } = Astro.props;
-const { title, date, status, summary, cover, tags } = milestone.data;
+const { title, date, category, status, summary, cover, tags } = milestone.data;
 
 const statusLabel: Record<string, string> = {
 	completed: 'Completed',
 	'in-progress': 'In progress',
 	iterating: 'Iterating',
+};
+
+const categoryLabel: Record<string, string> = {
+	hardware: 'Hardware',
+	electronics: 'Electronics',
+	firmware: 'Firmware',
+	software: 'Software',
 };
 
 const formattedDate = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
@@ -24,6 +31,7 @@ const formattedDate = date.toLocaleDateString('en-US', { month: 'short', year: '
 	</div>
 	<div class="milestone-card__body">
 		<div class="milestone-card__meta">
+			<span class={`badge badge--${category}`}>{categoryLabel[category]}</span>
 			<span class="status">{formattedDate}</span>
 		</div>
 		<h3 class="milestone-card__title">{title}</h3>
@@ -71,16 +79,18 @@ const formattedDate = date.toLocaleDateString('en-US', { month: 'short', year: '
 		flex-direction: column;
 		gap: 8px;
 		flex: 1;
+		min-width: 0;
 	}
 
 	.milestone-card__meta {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: 12px;
 	}
 
 	.milestone-card__title {
-		font-size: 1.1rem;
+		font-size: 1.15rem;
 		margin: 0;
 	}
 
@@ -103,6 +113,7 @@ const formattedDate = date.toLocaleDateString('en-US', { month: 'short', year: '
 	}
 
 	.tag {
+		font-family: var(--font-mono);
 		font-size: 0.7rem;
 		color: var(--text-muted);
 		background: rgba(255, 255, 255, 0.05);
