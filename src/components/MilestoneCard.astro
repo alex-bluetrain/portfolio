@@ -31,19 +31,9 @@ const formattedDate = date.toLocaleDateString('en-US', { month: 'short', year: '
 	</div>
 	<div class="milestone-card__body">
 		<div class="milestone-card__meta">
-			<span class={`badge badge--${category}`}>{categoryLabel[category]}</span>
-			<span class="status">{formattedDate}</span>
 		</div>
 		<h3 class="milestone-card__title">{title}</h3>
 		<p class="milestone-card__summary">{summary}</p>
-		<div class="milestone-card__footer">
-			<span class="status">{statusLabel[status]}</span>
-			{tags.length > 0 && (
-				<div class="milestone-card__tags">
-					{tags.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}
-				</div>
-			)}
-		</div>
 	</div>
 </a>
 

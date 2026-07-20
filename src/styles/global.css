@@ -11,10 +11,10 @@
 	/* Texto sobre fondo --accent: el amarillo exige tinta oscura, no blanca */
 	--accent-ink: #14140f;
 	--accent-2: #ff9f1c;
-	--cat-hardware: #e10600;
-	--cat-electronics: #ff9f1c;
+	--cat-hardware: #8a8a8f;
+	--cat-electronics: var(--accent);
 	--cat-firmware: #00b4d8;
-	--cat-software: #8338ec;
+	--cat-software: #6b5b9f;
 	--radius: 10px;
 	--max-width: 1120px;
 	--font-display: 'Oswald', 'Arial Narrow', sans-serif;

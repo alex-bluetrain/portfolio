@@ -42,19 +42,7 @@ const formattedDate = date.toLocaleDateString('en-US', { month: 'long', year: 'n
 	<article class="section container detail">
 		<a class="back-link" href={withBase('#timeline')}>&larr; Back to the timeline</a>
 
-		<div class="detail__meta">
-			<span class={`badge badge--${category}`}>{categoryLabel[category]}</span>
-			<span class="status">{formattedDate}</span>
-			<span class="status">{statusLabel[status]}</span>
-		</div>
-
 		<h1 class="detail__title">{title}</h1>
-
-		{tags.length > 0 && (
-			<div class="detail__tags">
-				{tags.map((tag) => <span class="tag">{tag}</span>)}
-			</div>
-		)}
 
 		<div class="detail__cover">
 			<img src={withBase(cover)} alt={title} />
@@ -140,19 +128,30 @@ const formattedDate = date.toLocaleDateString('en-US', { month: 'long', year: 'n
 	}
 
 	.detail__content {
-		margin-bottom: 40px;
+		margin-bottom: 56px;
+		line-height: 1.7;
 	}
 
 	.detail__content :global(p) {
 		font-size: 1.02rem;
+		margin-bottom: 1.2em;
 	}
 
 	.detail__block {
-		margin-bottom: 40px;
+		margin-bottom: 56px;
+		padding-top: 40px;
+		border-top: 1px solid var(--border);
+	}
+
+	.detail__block:first-of-type {
+		padding-top: 0;
+		border-top: none;
 	}
 
 	.detail__block h2 {
-		font-size: 1.3rem;
-		margin-bottom: 16px;
+		font-size: 1.35rem;
+		margin-bottom: 24px;
+		color: #fff;
+		letter-spacing: -0.01em;
 	}
 </style>
