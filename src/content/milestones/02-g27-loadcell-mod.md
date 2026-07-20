@@ -13,7 +13,8 @@ images:
     alt: "Photo pending: load cell mounting detail"
     caption: "Load cell mounting and bracket detail"
 videos:
-  - title: "Video pending: before/after brake feel comparison"
+  - src: "https://youtu.be/CRloNRSzUKY"
+    title: "G27 load cell mod"
     caption: "Progressive brake feel after the load cell mod"
 specs:
   - label: "Base pedal set"

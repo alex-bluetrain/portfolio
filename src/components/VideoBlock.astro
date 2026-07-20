@@ -12,24 +12,53 @@ interface Props {
 }
 
 const { videos } = Astro.props;
+
+function getYouTubeEmbedUrl(src: string): string | null {
+	try {
+		const url = new URL(src);
+		if (url.hostname === 'youtu.be') {
+			return `https://www.youtube.com/embed${url.pathname}`;
+		}
+		if (url.hostname.endsWith('youtube.com')) {
+			if (url.pathname === '/watch') {
+				const id = url.searchParams.get('v');
+				return id ? `https://www.youtube.com/embed/${id}` : null;
+			}
+			if (url.pathname.startsWith('/embed/')) {
+				return src;
+			}
+		}
+	} catch {
+		return null;
+	}
+	return null;
+}
 ---
 
 {videos.length > 0 && (
 	<div class="videos">
-		{videos.map((video) => (
-			<div class="placeholder-video">
-				{video.src ? (
-					// TODO: if src is a YouTube/Vimeo link, replace with an <iframe>; if it's a
-					// local file (e.g. /videos/clip.mp4), keep <video controls src={video.src} />
-					<video controls src={video.src.startsWith('/') ? withBase(video.src) : video.src}></video>
-				) : (
-					<>
-						<div class="placeholder-video__play">▶</div>
-						<p class="placeholder-video__caption">{video.title}{video.caption ? ` — ${video.caption}` : ''}</p>
-					</>
-				)}
-			</div>
-		))}
+		{videos.map((video) => {
+			const youtubeEmbed = video.src ? getYouTubeEmbedUrl(video.src) : null;
+			return (
+				<div class="placeholder-video">
+					{youtubeEmbed ? (
+						<iframe
+							src={youtubeEmbed}
+							title={video.title}
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+					) : video.src ? (
+						<video controls src={video.src.startsWith('/') ? withBase(video.src) : video.src}></video>
+					) : (
+						<>
+							<div class="placeholder-video__play">▶</div>
+							<p class="placeholder-video__caption">{video.title}{video.caption ? ` — ${video.caption}` : ''}</p>
+						</>
+					)}
+				</div>
+			);
+		})}
 	</div>
 )}
 
@@ -40,8 +69,10 @@ const { videos } = Astro.props;
 		gap: 16px;
 	}
 
-	video {
+	video,
+	iframe {
 		width: 100%;
 		height: 100%;
+		border: 0;
 	}
 </style>
